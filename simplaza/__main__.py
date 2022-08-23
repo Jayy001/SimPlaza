@@ -1,4 +1,4 @@
-from simplaza_cli.api import manager
+from simplaza.api import manager
 
 from rich.prompt import Prompt, Confirm
 from rich.console import Console

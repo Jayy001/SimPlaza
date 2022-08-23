@@ -1,7 +1,7 @@
 [tool.poetry]
-name = "simplaza_cli"
-version = "1.0.0"
-description = "SimPlaza CLI - Query and download files from SimPlaza directly from your terminal"
+name = "simplaza"
+version = "0.1.0"
+description = "SimPlaza unoffical CLI - Query and download torrent files from SimPlaza directly from your terminal"
 authors = ["Jacob <jayy2004@gmx.co.uk>"]
 license = "gpl-3.0"
 
@@ -20,4 +20,4 @@ requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]
-simplaza= "simplaza_cli.__main__:main"
+simplaza= "simplaza.__main__:main"
