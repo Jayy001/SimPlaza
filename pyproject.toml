@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "simplaza"
-version = "0.1.0"
+version = "0.1.1"
 description = "SimPlaza unoffical CLI - Query and download torrent files from SimPlaza directly from your terminal"
 authors = ["Jacob <jayy2004@gmx.co.uk>"]
 license = "gpl-3.0"

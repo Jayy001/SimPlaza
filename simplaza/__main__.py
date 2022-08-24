@@ -39,8 +39,12 @@ def main(**kwargs):
                 RequestedAddonLink = False
 
                 if kwargs['default']:
-                    RequestedAddonLink = query_results[0]['link']
-                    console.print(query_results[0]['name'])
+                    try:
+                        RequestedAddonLink = query_results[0]['link']
+                        console.print(query_results[0]['name'])
+                    except:
+                        console.print("No results for " + line, style="red")
+                        continue
                 else:
                     for option in query_results:
                         if Confirm.ask(f"Select {option['name']}"):
