@@ -8,6 +8,7 @@ from os.path import exists
 import click
 
 @click.command()
+@click.option("--magnet", is_flag=True, help="Opens magnet link")
 @click.option("--json", is_flag=True, help="Returns search results")
 @click.option("--default", is_flag=True, help="Gets first option automatically")
 @click.argument('query', required=False)
@@ -53,7 +54,16 @@ def main(**kwargs):
 
                 if RequestedAddonLink:
                     torrent_data = sp.get_torrent_data(RequestedAddonLink)
-                    sp.open_torrent(torrent_data) # Single function?
+
+                    if not torrent_data:
+                        console.print("Could not get torrent for " + line, style="red")
+                        continue 
+
+                    if kwargs['magnet']:
+                        sp.open_torrent(torrent_data) # Single function?
+                    else:
+                        with open(f"{line}.torrent", "wb") as torrent_file:
+                            torrent_file.write(torrent_data)
         return
 
     query_results = sp.search(queryPrompt)  # Search SimPlaza for your input
@@ -80,7 +90,17 @@ def main(**kwargs):
         )  # Get the addons link
 
     torrent_data = sp.get_torrent_data(RequestedAddonLink)
-    sp.open_torrent(torrent_data)  # Open torrent in client of your choice
+
+    if not torrent_data:
+        console.print("Could not get torrent for " + queryPrompt, style="red")
+
+        return 
+        
+    if kwargs['magnet']:
+        sp.open_torrent(torrent_data) # Open torrent in client of your choice
+    else:
+        with open(f"{queryPrompt}.torrent", "wb") as torrent_file:
+            torrent_file.write(torrent_data)
 
     exit(0)
 

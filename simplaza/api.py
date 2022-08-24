@@ -99,11 +99,16 @@ class manager:
         webbrowser.open(magneturi.from_torrent_data(torrent_data))
 
     def get_torrent_data(self, article_link):
-        torrent_html = self.request_soup(article_link).find_all("iframe")[1]
-        query_decoded = urllib.parse.unquote(torrent_html["src"])
+        try:
+            torrent_html = self.request_soup(article_link).find_all("iframe")[1]
 
-        torrent_link = query_decoded.partition('href="')[2].partition('"')[0]
+            query_decoded = urllib.parse.unquote(torrent_html["src"])
+    
+            torrent_link = query_decoded.partition('href="')[2].partition('"')[0]
+    
+            torrent_data = requests.get(torrent_link, allow_redirects=True).content
 
-        torrent_data = requests.get(torrent_link, allow_redirects=True).content
+        except Exception:
+            return None
 
         return torrent_data
