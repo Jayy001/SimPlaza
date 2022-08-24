@@ -4,6 +4,7 @@ from rich.prompt import Prompt, Confirm
 from rich.console import Console
 
 from os.path import exists
+from sys import exit
 
 import click
 
@@ -18,7 +19,7 @@ def main(**kwargs):
     SimPlaza CLI - Query and download files from SimPlaza directly from your terminal
     \n
     GitHub:\n
-            https://github.com/\n
+            https://github.com/Jayy001/SimPlaza\n
     Usage:
     \n
             simplaza <query> 
