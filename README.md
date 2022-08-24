@@ -1,6 +1,5 @@
 # SimPlaza CLI
-Unofficial CLI of the SimPlaza website for flightsimmers 
-Current version: 1.1.5
+Unofficial CLI of the SimPlaza website for flightsimmers v0.1.5
 
 # How to install?
 
