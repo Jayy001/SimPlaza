@@ -10,7 +10,7 @@ Install via pip:
 pip install simplaza
 ```
 
-...or download the release executable file from the release page
+...or download the complied executable file from the release page (made with auto-py-to-exe)
 
 # How to use?
 
