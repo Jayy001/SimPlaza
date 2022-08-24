@@ -1,5 +1,5 @@
 # SimPlaza CLI
-Unofficial CLI of the SimPlaza website for flightsimmers v0.1.5
+**Unofficial** CLI of the SimPlaza website for flightsimmers v0.1.5
 
 # How to install?
 
@@ -48,6 +48,9 @@ heathrow
 ```
 
 Note: Using the file option also works with `--magnet` and `--default` option, so if you want to automate it all from one command I would use `simplaza --default --magnet file.txt` to automatically send every addon to your torrent client without any user interaction
+
+# Disclaimer 
+I am in no way shape or form associated with `simplaza.org`, this is just a tool I made to help automate the process of searching the site. Please check the license before using this for more information. 
 
 
 
